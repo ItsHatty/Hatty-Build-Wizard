@@ -1,0 +1,550 @@
+{
+  "_meta": {
+    "dataset": "nba2k27-builder-dataset",
+    "captured": "2026-08-22",
+    "source": "https://github.com/lightmatmul/nba2k27-builder-dataset/blob/main/bodies/legal_bodies.json",
+    "note": "Position-specific legal measurements, reproduced from upstream dataset; not attribute caps."
+  },
+  "data": [
+    {
+      "position": "PG",
+      "height_inches": [
+        69,
+        79
+      ],
+      "bodies": [
+        {
+          "height_inches": 69,
+          "weight_lb": [
+            145,
+            185
+          ],
+          "wingspan_inches": [
+            69,
+            75
+          ]
+        },
+        {
+          "height_inches": 70,
+          "weight_lb": [
+            150,
+            190
+          ],
+          "wingspan_inches": [
+            70,
+            76
+          ]
+        },
+        {
+          "height_inches": 71,
+          "weight_lb": [
+            155,
+            195
+          ],
+          "wingspan_inches": [
+            71,
+            77
+          ]
+        },
+        {
+          "height_inches": 72,
+          "weight_lb": [
+            155,
+            205
+          ],
+          "wingspan_inches": [
+            72,
+            78
+          ]
+        },
+        {
+          "height_inches": 73,
+          "weight_lb": [
+            160,
+            215
+          ],
+          "wingspan_inches": [
+            73,
+            79
+          ]
+        },
+        {
+          "height_inches": 74,
+          "weight_lb": [
+            165,
+            220
+          ],
+          "wingspan_inches": [
+            74,
+            80
+          ]
+        },
+        {
+          "height_inches": 75,
+          "weight_lb": [
+            170,
+            225
+          ],
+          "wingspan_inches": [
+            75,
+            81
+          ]
+        },
+        {
+          "height_inches": 76,
+          "weight_lb": [
+            175,
+            230
+          ],
+          "wingspan_inches": [
+            76,
+            82
+          ]
+        },
+        {
+          "height_inches": 77,
+          "weight_lb": [
+            175,
+            230
+          ],
+          "wingspan_inches": [
+            77,
+            83
+          ]
+        },
+        {
+          "height_inches": 78,
+          "weight_lb": [
+            180,
+            230
+          ],
+          "wingspan_inches": [
+            78,
+            84
+          ]
+        },
+        {
+          "height_inches": 79,
+          "weight_lb": [
+            180,
+            230
+          ],
+          "wingspan_inches": [
+            79,
+            85
+          ]
+        }
+      ]
+    },
+    {
+      "position": "SG",
+      "height_inches": [
+        72,
+        80
+      ],
+      "bodies": [
+        {
+          "height_inches": 72,
+          "weight_lb": [
+            165,
+            205
+          ],
+          "wingspan_inches": [
+            72,
+            78
+          ]
+        },
+        {
+          "height_inches": 73,
+          "weight_lb": [
+            165,
+            215
+          ],
+          "wingspan_inches": [
+            73,
+            79
+          ]
+        },
+        {
+          "height_inches": 74,
+          "weight_lb": [
+            165,
+            220
+          ],
+          "wingspan_inches": [
+            74,
+            80
+          ]
+        },
+        {
+          "height_inches": 75,
+          "weight_lb": [
+            170,
+            225
+          ],
+          "wingspan_inches": [
+            75,
+            81
+          ]
+        },
+        {
+          "height_inches": 76,
+          "weight_lb": [
+            175,
+            235
+          ],
+          "wingspan_inches": [
+            76,
+            82
+          ]
+        },
+        {
+          "height_inches": 77,
+          "weight_lb": [
+            175,
+            235
+          ],
+          "wingspan_inches": [
+            77,
+            83
+          ]
+        },
+        {
+          "height_inches": 78,
+          "weight_lb": [
+            180,
+            235
+          ],
+          "wingspan_inches": [
+            78,
+            84
+          ]
+        },
+        {
+          "height_inches": 79,
+          "weight_lb": [
+            180,
+            235
+          ],
+          "wingspan_inches": [
+            79,
+            85
+          ]
+        },
+        {
+          "height_inches": 80,
+          "weight_lb": [
+            185,
+            235
+          ],
+          "wingspan_inches": [
+            80,
+            86
+          ]
+        }
+      ]
+    },
+    {
+      "position": "SF",
+      "height_inches": [
+        76,
+        82
+      ],
+      "bodies": [
+        {
+          "height_inches": 76,
+          "weight_lb": [
+            175,
+            235
+          ],
+          "wingspan_inches": [
+            76,
+            82
+          ]
+        },
+        {
+          "height_inches": 77,
+          "weight_lb": [
+            175,
+            250
+          ],
+          "wingspan_inches": [
+            77,
+            83
+          ]
+        },
+        {
+          "height_inches": 78,
+          "weight_lb": [
+            180,
+            250
+          ],
+          "wingspan_inches": [
+            78,
+            84
+          ]
+        },
+        {
+          "height_inches": 79,
+          "weight_lb": [
+            180,
+            250
+          ],
+          "wingspan_inches": [
+            79,
+            85
+          ]
+        },
+        {
+          "height_inches": 80,
+          "weight_lb": [
+            185,
+            250
+          ],
+          "wingspan_inches": [
+            80,
+            86
+          ]
+        },
+        {
+          "height_inches": 81,
+          "weight_lb": [
+            185,
+            250
+          ],
+          "wingspan_inches": [
+            81,
+            87
+          ]
+        },
+        {
+          "height_inches": 82,
+          "weight_lb": [
+            200,
+            250
+          ],
+          "wingspan_inches": [
+            82,
+            88
+          ]
+        }
+      ]
+    },
+    {
+      "position": "PF",
+      "height_inches": [
+        77,
+        84
+      ],
+      "bodies": [
+        {
+          "height_inches": 77,
+          "weight_lb": [
+            210,
+            250
+          ],
+          "wingspan_inches": [
+            77,
+            83
+          ]
+        },
+        {
+          "height_inches": 78,
+          "weight_lb": [
+            210,
+            265
+          ],
+          "wingspan_inches": [
+            78,
+            84
+          ]
+        },
+        {
+          "height_inches": 79,
+          "weight_lb": [
+            210,
+            270
+          ],
+          "wingspan_inches": [
+            79,
+            85
+          ]
+        },
+        {
+          "height_inches": 80,
+          "weight_lb": [
+            210,
+            275
+          ],
+          "wingspan_inches": [
+            80,
+            86
+          ]
+        },
+        {
+          "height_inches": 81,
+          "weight_lb": [
+            210,
+            285
+          ],
+          "wingspan_inches": [
+            81,
+            87
+          ]
+        },
+        {
+          "height_inches": 82,
+          "weight_lb": [
+            210,
+            285
+          ],
+          "wingspan_inches": [
+            82,
+            88
+          ]
+        },
+        {
+          "height_inches": 83,
+          "weight_lb": [
+            210,
+            285
+          ],
+          "wingspan_inches": [
+            83,
+            89
+          ]
+        },
+        {
+          "height_inches": 84,
+          "weight_lb": [
+            215,
+            285
+          ],
+          "wingspan_inches": [
+            84,
+            90
+          ]
+        }
+      ]
+    },
+    {
+      "position": "C",
+      "height_inches": [
+        79,
+        88
+      ],
+      "bodies": [
+        {
+          "height_inches": 79,
+          "weight_lb": [
+            215,
+            270
+          ],
+          "wingspan_inches": [
+            79,
+            85
+          ]
+        },
+        {
+          "height_inches": 80,
+          "weight_lb": [
+            215,
+            275
+          ],
+          "wingspan_inches": [
+            80,
+            86
+          ]
+        },
+        {
+          "height_inches": 81,
+          "weight_lb": [
+            215,
+            285
+          ],
+          "wingspan_inches": [
+            81,
+            87
+          ]
+        },
+        {
+          "height_inches": 82,
+          "weight_lb": [
+            215,
+            285
+          ],
+          "wingspan_inches": [
+            82,
+            88
+          ]
+        },
+        {
+          "height_inches": 83,
+          "weight_lb": [
+            215,
+            290
+          ],
+          "wingspan_inches": [
+            83,
+            89
+          ]
+        },
+        {
+          "height_inches": 84,
+          "weight_lb": [
+            215,
+            290
+          ],
+          "wingspan_inches": [
+            84,
+            90
+          ]
+        },
+        {
+          "height_inches": 85,
+          "weight_lb": [
+            220,
+            290
+          ],
+          "wingspan_inches": [
+            85,
+            91
+          ]
+        },
+        {
+          "height_inches": 86,
+          "weight_lb": [
+            220,
+            290
+          ],
+          "wingspan_inches": [
+            86,
+            92
+          ]
+        },
+        {
+          "height_inches": 87,
+          "weight_lb": [
+            230,
+            290
+          ],
+          "wingspan_inches": [
+            87,
+            93
+          ]
+        },
+        {
+          "height_inches": 88,
+          "weight_lb": [
+            230,
+            290
+          ],
+          "wingspan_inches": [
+            88,
+            94
+          ]
+        }
+      ]
+    }
+  ]
+}
