@@ -18,3 +18,16 @@ A standalone GitHub Pages website. **This is a clean deployment package, not an 
 
 ## Release validation
 Run `node tests/smoke.js` in the extracted folder on a computer with Node.js installed. These tests verify packaging, script wiring and arithmetic invariants, **not exact parity with the game**.
+
+## v7 UI update (no calculation changes)
+- Main Optimize button moved below feasibility search; results directly below it, with automatic scrolling when the engine renders output.
+- Accuracy information is collapsed at the bottom.
+- Rules/data, thresholds and legacy planning controls moved to collapsed Advanced / Developer Settings, accessible from the header gear.
+- Physical Feasibility Search remains a separate button, unchanged.
+- Current and Projected cap-breaker inputs remain unchanged.
+- Manually editing an attribute rating automatically checks its target box.
+- Settings are automatically saved to this browser and restored on return. Existing manual Save/Load remain available.
+- This is a UI-only update. Formula and game parity remain unverified.
+
+### Updating the existing GitHub Pages repository
+Upload/replace `index.html` in the **repository root**. No other existing JS/JSON files need replacing for this UI-only release. If using the complete ZIP instead, upload its *contents*, keeping the `data/` folder and all files at their existing paths. Commit to `main` and wait for GitHub Pages deployment.
