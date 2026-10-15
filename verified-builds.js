@@ -1,0 +1,2 @@
+/* User-verified in-game SG build; one extra Post Control point needed to reach 99. */
+window.HattyVerifiedBuilds=[{body:{position:'SG',height:77,weight:233,wing:82},base:{close_shot:74,driving_layup:71,driving_dunk:89,standing_dunk:70,post_control:80,mid_range:74,three_point:84,free_throw:62,pass_accuracy:61,ball_handle:86,speed_with_ball:87,interior_defense:84,perimeter_defense:85,steal:82,block:71,offensive_rebound:79,defensive_rebound:82,speed:84,agility:81,strength:89,vertical:89},evidence:'Entered all ratings in NBA 2K27; raising Post Control 79→80 reached 99 OVR.'}];
