@@ -31,3 +31,9 @@ Run `node tests/smoke.js` in the extracted folder on a computer with Node.js ins
 
 ### Updating the existing GitHub Pages repository
 Upload/replace `index.html` in the **repository root**. No other existing JS/JSON files need replacing for this UI-only release. If using the complete ZIP instead, upload its *contents*, keeping the `data/` folder and all files at their existing paths. Commit to `main` and wait for GitHub Pages deployment.
+
+## v8 visual results update
+- Build results use grouped, color-coded attribute bars, physical-cap ticks and predicted breaker steps.
+- The original exact base attribute table remains expandable.
+- Existing engine, targets, feasibility, badge and breaker arithmetic are unchanged.
+- Cap-breaker values are predictions, not confirmed game results.

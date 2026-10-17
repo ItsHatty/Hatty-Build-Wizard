@@ -33,7 +33,28 @@ let html=`<p><b>Engine: native-breaker-formula-beta-v6</b></p><p><b>${checked} l
 
 if(!top.length)html+='<p>No candidate passed the current search and cap-breaker formula proxy. This is NOT proof the request is impossible; try other measurements or lower targets. No unverified success will be claimed.</p>';
 for(const r of top){if(r.body.position==='SG'&&r.body.height===77&&r.body.weight===233&&r.body.wing===82&&r.ratings.speed_with_ball>=80&&r.ratings.speed<76)throw Error('SAFETY CHECK: invalid Speed tether escaped optimizer');}
-for(const [i,r] of top.entries())html+=`<div class="insight"><h3>#${i+1} · ${pos} ${heightLabel(height)} · ${r.body.weight} lb · ${heightLabel(r.body.wing)} wingspan</h3><p>Calculated base OVR: <b>${r.ovr.toFixed(3)}</b> / 99 · ${r.breakersUsed||0} / ${breakerCount} breakers allocated · Builder base attributes</p><div class="scroll"><table><tr><th>Attribute</th><th>Rating</th><th>Physical cap</th></tr>${engine.ids.map((a,j)=>`<tr><td>${engine.names[j]}</td><td><b>${r.ratings[a]}</b></td><td>${r.caps[a]}</td></tr>`).join('')}</table></div></div>`;
+const categories=[
+ ['Finishing','#4b9eff',['close_shot','driving_layup','driving_dunk','standing_dunk','post_control']],
+ ['Shooting','#50b982',['mid_range_shot','three_point_shot','free_throw']],
+ ['Playmaking','#f0a14a',['pass_accuracy','ball_handle','speed_with_ball']],
+ ['Defense','#ed6969',['interior_defense','perimeter_defense','steal','block']],
+ ['Rebounding','#aa81ef',['offensive_rebound','defensive_rebound']],
+ ['Physicals','#edbf54',['speed','agility','strength','vertical']]
+];
+function buildCard(r,i){
+ const plans=r.breakerPlans||{}, projections=r.formulaProjections||{};
+ const categoryHTML=categories.map(([title,color,ids])=>{
+  const rows=ids.map(id=>{const j=engine.ids.indexOf(id);if(j<0)return '';const base=r.ratings[id],cap=r.caps[id]??99,plan=plans[id],projection=projections[id],steps=projection?.steps||[],used=plan?.used||0;
+   const pct=Math.max(0,Math.min(100,(base-25)/74*100)),capPct=Math.max(0,Math.min(100,(cap-25)/74*100));
+   const label=engine.names[j].replace('Three-Point Shot','Three-Point').replace('Mid-Range Shot','Mid-Range').replace('Offensive Rebound','Off. Rebound').replace('Defensive Rebound','Def. Rebound');
+   const end=projection?.final??base;
+   const breakerInfo=used?`<div class="wizard-steps">${steps.slice(0,used).map(n=>`<span class="wizard-step">+${n}</span>`).join('')}<span class="wizard-final">→ ${end} projected</span></div>`:'<div class="wizard-steps wizard-none">No breakers allocated</div>';
+   return `<div class="wizard-attribute"><div class="wizard-attr-label"><span>${label}</span><strong>${base}</strong></div><div class="wizard-track"><span style="width:${pct}%;background:${color}"></span><i style="left:${capPct}%"></i></div><div class="wizard-cap">${breakerInfo}<small>cap ${cap}</small></div></div>`;
+  }).join('');return `<section class="wizard-category" style="--category-color:${color}"><h4>${title}</h4>${rows}</section>`;
+ }).join('');
+ return `<article class="insight wizard-build"><div class="wizard-build-header"><div><div class="wizard-rank">BUILD #${i+1} · ${r.body.position}</div><h3>${heightLabel(r.body.height)} · ${r.body.weight} lb · ${heightLabel(r.body.wing)} wingspan</h3><p>Calculated base OVR <b>${r.ovr.toFixed(3)} / 99</b> · ${r.breakersUsed||0}/${breakerCount} projected breakers allocated</p></div><span class="wizard-beta">BETA · UNVERIFIED</span></div><div class="wizard-category-grid">${categoryHTML}</div><details class="wizard-full-table"><summary>View exact base ratings and physical caps as a table</summary><div class="scroll"><table><tr><th>Attribute</th><th>Base</th><th>Cap</th></tr>${engine.ids.map((id,j)=>`<tr><td>${engine.names[j]}</td><td>${r.ratings[id]}</td><td>${r.caps[id]}</td></tr>`).join('')}</table></div></details></article>`;
+}
+for(const [i,r] of top.entries())html+=buildCard(r,i);
 output.innerHTML=html;const resultCards=output.querySelectorAll('.insight');for(let i=0;i<top.length;i++){const r=top[i],entries=Object.entries(r.breakerPlans||{}).filter(([id,o])=>o.used>0);if(!entries.length)continue;const box=document.createElement('div');box.className='insight';const h=document.createElement('h4');h.textContent='Cap-breaker allocation — recovered formula (BETA proxy)';box.appendChild(h);
 for(const [id,o] of entries){
  const projected=r.formulaProjections?.[id];if(!projected)continue;
