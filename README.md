@@ -1,3 +1,15 @@
+# Hatty’s Build Wizard v9 — Tether and Shooting Fix
+
+Upload the **entire extracted contents** to the root of your existing GitHub Pages repository, or update just these two files: `hatty-live.js` and `linked-attributes.js`.
+
+- Shooting result cards now use the canonical `mid_range` and `three_point` IDs, matching the optimizer. Missing category identifiers now raise an error instead of silently disappearing.
+- The linked-rule solver now processes zero-delta constraints instead of ignoring them globally. The known in-game 6′5″, 233 lb, 6′10″ wingspan exception (Speed With Ball 80, Speed 76) is preserved.
+- The solver repeats until all constraints stabilize, rejects physical-cap conflicts, and is used by both candidate evaluation and budget filling.
+- **Important limitation:** The extracted zero-delta Speed With Ball → Speed equality conflicts with the observed 80/76 game build. For other bodies it is currently applied *provisionally* and may reject legal builds. For the observed body, only the observed Speed >= 76 floor at SWB >= 80 is enforced, not a guessed general formula. In-game validation remains necessary.
+- No new results-screen clutter or cap-breaker changes.
+
+Tests: JavaScript syntax checks, existing smoke test, and linked-rule scenarios (93 SWB / 68 Speed, observed 80 SWB / 68 Speed).
+
 # Hatty’s Build Wizard — Clean v6 beta
 
 A standalone GitHub Pages website. **This is a clean deployment package, not an exact game-verified cap-breaker engine.**

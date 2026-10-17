@@ -29,13 +29,13 @@ for(const candidate of pool){
  r.formulaProjections=projections;top.push(r);
  if(top.length>=5)break;
 }
-let html=`<p><b>Engine: native-breaker-formula-beta-v6</b></p><p><b>${checked} legal bodies checked · ${feasible.length} base-target candidates · ${over} exceed 99 OVR · ${unknown} unmeasured · ${rejectedByFormula} formula rejections</b></p><p class="warn muted">EXPERIMENTAL, NOT IN-GAME VERIFIED. These are calculated BASE allocations plus recovered sequential cap-breaker formula using build-specific archetype weights (when final phase is selected). The 21-weight maximum is a PROXY for the native 155-weight maximum; cap-breaker results remain unverified. One measured Speed With Ball→Speed tether is enforced for the tested 6'5 SG body; other zero-delta rules remain unresolved. Confirm every rating in the game's builder before spending VC. Data captured Aug 22, 2026.</p>`;
+let html=`<p><b>Engine: native-breaker-formula-beta-v6</b></p><p><b>${checked} legal bodies checked · ${feasible.length} base-target candidates · ${over} exceed 99 OVR · ${unknown} unmeasured · ${rejectedByFormula} formula rejections</b></p><p class="warn muted">EXPERIMENTAL, NOT IN-GAME VERIFIED. These are calculated BASE allocations plus recovered sequential cap-breaker formula using build-specific archetype weights (when final phase is selected). The 21-weight maximum is a PROXY for the native 155-weight maximum; cap-breaker results remain unverified. Zero-delta tether export rules are provisionally enforced except where contradicted by the measured 6'5 SG body. These rules may be too restrictive; verify builds in 2K HQ. Confirm every rating in the game's builder before spending VC. Data captured Aug 22, 2026.</p>`;
 
 if(!top.length)html+='<p>No candidate passed the current search and cap-breaker formula proxy. This is NOT proof the request is impossible; try other measurements or lower targets. No unverified success will be claimed.</p>';
 for(const r of top){if(r.body.position==='SG'&&r.body.height===77&&r.body.weight===233&&r.body.wing===82&&r.ratings.speed_with_ball>=80&&r.ratings.speed<76)throw Error('SAFETY CHECK: invalid Speed tether escaped optimizer');}
 const categories=[
  ['Finishing','#4b9eff',['close_shot','driving_layup','driving_dunk','standing_dunk','post_control']],
- ['Shooting','#50b982',['mid_range_shot','three_point_shot','free_throw']],
+ ['Shooting','#50b982',['mid_range','three_point','free_throw']],
  ['Playmaking','#f0a14a',['pass_accuracy','ball_handle','speed_with_ball']],
  ['Defense','#ed6969',['interior_defense','perimeter_defense','steal','block']],
  ['Rebounding','#aa81ef',['offensive_rebound','defensive_rebound']],
@@ -44,7 +44,7 @@ const categories=[
 function buildCard(r,i){
  const plans=r.breakerPlans||{}, projections=r.formulaProjections||{};
  const categoryHTML=categories.map(([title,color,ids])=>{
-  const rows=ids.map(id=>{const j=engine.ids.indexOf(id);if(j<0)return '';const base=r.ratings[id],cap=r.caps[id]??99,plan=plans[id],projection=projections[id],steps=projection?.steps||[],used=plan?.used||0;
+  const rows=ids.map(id=>{const j=engine.ids.indexOf(id);if(j<0)throw Error('Results UI missing attribute identifier: '+id);const base=r.ratings[id],cap=r.caps[id]??99,plan=plans[id],projection=projections[id],steps=projection?.steps||[],used=plan?.used||0;
    const pct=Math.max(0,Math.min(100,(base-25)/74*100)),capPct=Math.max(0,Math.min(100,(cap-25)/74*100));
    const label=engine.names[j].replace('Three-Point Shot','Three-Point').replace('Mid-Range Shot','Mid-Range').replace('Offensive Rebound','Off. Rebound').replace('Defensive Rebound','Def. Rebound');
    const end=projection?.final??base;
